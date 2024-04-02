@@ -14,9 +14,9 @@ jobs:
       uses: actions/checkout@v4
     
     - name: Generate sha
-      id: generate-sha
+      id: generate_sha
       run: |
         SHA=$(echo $GITHUB_SHA | head -c7)
         echo sha=$SHA >> $GITHUB_OUTPUT
     - name: Build docker image
-      run: docker build -t thiago0503/nlw.service.passin:${{steps.generate_sha.outputs.sha}} .
+      run: docker build -t thiago0503/nlw.service.passin:${{ steps.generate_sha.outputs.sha }} .
