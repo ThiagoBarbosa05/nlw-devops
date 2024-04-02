@@ -1,0 +1,10 @@
+docker pull node:20 // baixa imagem node
+
+ docker pull node:20-alpine3.19 // baixa imagem node
+
+ docker build -t passin:v2 . // build da aplicacao
+
+ docker run -p 3001:3333 -d  passin:v2 // roda a aplicacao na porta 3001
+
+  docker compose up --build -d // build da aplicacao usando docker compose
+
