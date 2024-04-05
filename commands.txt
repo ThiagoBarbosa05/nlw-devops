@@ -8,3 +8,8 @@ docker pull node:20 // baixa imagem node
 
   docker compose up --build -d // build da aplicacao usando docker compose
 
+kubectl create ns nlw-helm // cria um namespace para a aplicacao
+
+ helm upgrade --install passin ./deploy -n nlw-helm
+
+ kubectl get pods -n nlw-helm

@@ -32,3 +32,13 @@ jobs:
         docker push thiago0503/nlw.service.passin:${{ steps.generate_sha.outputs.sha }}
         docker tag thiago0503/nlw.service.passin:${{ steps.generate_sha.outputs.sha }} thiago0503/nlw.service.passin:latest
         docker push thiago0503/nlw.service.passin:latest
+
+    - name: Update image tag
+      uses: fjogeleit/yaml-update-action@main
+      with:
+        branch: main
+        valueFile: 'deploy/values.yaml'
+        propertyPath: 'image.tag'
+        value: ${{ steps.generate_sha.outputs.sha }}
+        commitChange: true
+        message: "new: update tag in values helm"
