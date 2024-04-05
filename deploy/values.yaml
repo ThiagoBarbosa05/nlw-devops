@@ -2,7 +2,7 @@ replicaCount: 5
 image:
   repository: thiago0503/nlw.service.passin
   pullPolicy: Always
-  tag: '5446979'
+  tag: c668c07
   port: 3333
 imagePullSecrets: []
 nameOverride: ''
